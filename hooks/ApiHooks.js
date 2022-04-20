@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { MainContext } from "../contexts/MainContext";
-import { baseUrl } from "../utils/url";
-import { fetchData } from "./CommonFunctions";
+import { getDataByUrl } from "./CommonFunctions";
 
 const useMedia = () => {
   const [mediaArray, setMediaArray] = useState([]);
@@ -11,6 +10,7 @@ const useMedia = () => {
   const fetchCountries = async () => {
     try {
       const countryData = await getDataByUrl("flag/unicode");
+      const locations = await getDataByUrl("positions");
       setMediaArray(countryData);
     } catch (error) {
       console.log("Error", error);
@@ -27,8 +27,4 @@ const useMedia = () => {
   };
 };
 
-const getDataByUrl = async (url) => {
-  return await fetchData(`${baseUrl}${url}`);
-};
-
-export { useMedia, getDataByUrl };
+export { useMedia };

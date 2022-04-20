@@ -6,6 +6,17 @@ const MainView = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Countries</Text>
+      <Text
+        style={{
+          fontSize: 16,
+          fontWeight: "200",
+          paddingHorizontal: 20,
+          paddingBottom: 30,
+          marginTop: -20,
+        }}
+      >
+        Select a country to see more details
+      </Text>
       <CountryList navigation={navigation} />
     </SafeAreaView>
   );
@@ -21,7 +32,7 @@ const styles = StyleSheet.create({
 
   title: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: 20,
     alignSelf: "flex-start",
     fontSize: 40,
     fontWeight: "600",

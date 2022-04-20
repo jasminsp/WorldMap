@@ -1,3 +1,5 @@
+import { baseUrl } from "../utils/url";
+
 // Server communication
 const fetchData = async (url, options = {}) => {
   try {
@@ -17,4 +19,8 @@ const fetchData = async (url, options = {}) => {
   }
 };
 
-export { fetchData };
+const getDataByUrl = async (url) => {
+  return await fetchData(`${baseUrl}${url}`);
+};
+
+export { fetchData, getDataByUrl };

@@ -9,12 +9,14 @@ import PropTypes from "prop-types";
 const CountryList = ({ navigation }) => {
   const { mediaArray } = useMedia();
 
+  console.log(mediaArray);
+
   return (
     <View style={{ flex: 10 }}>
       <FlatList
         data={mediaArray.data}
         contentContainerStyle={styles.container}
-        keyExtractor={(item, index) => "key" + index}
+        keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
           <ListItem navigation={navigation} singleItem={item} />
         )}

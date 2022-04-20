@@ -7,7 +7,12 @@ import PropTypes from "prop-types";
 const ListItem = ({ singleItem }) => {
   return (
     <TouchableOpacity style={styles.container}>
-      <Text style={{ fontSize: 26, padding: 6 }}>{singleItem.name}</Text>
+      <Text style={{ flex: 8, fontSize: 24, padding: 6 }}>
+        {singleItem.name}
+      </Text>
+      <Text style={{ flex: 1, fontSize: 38, fontWeight: "100" }}>
+        {singleItem.unicodeFlag}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -19,6 +24,7 @@ ListItem.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 
