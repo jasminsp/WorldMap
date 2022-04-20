@@ -10,8 +10,8 @@ const ListItem = ({ singleItem }) => {
       <Text style={{ flex: 8, fontSize: 24, padding: 6 }}>
         {singleItem.name}
       </Text>
-      <Text style={{ flex: 1, fontSize: 38, fontWeight: "100" }}>
-        {singleItem.unicodeFlag}
+      <Text style={{ flex: 1, fontSize: 20, fontWeight: "100" }}>
+        {singleItem.iso2}
       </Text>
     </TouchableOpacity>
   );
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingVertical: 15,
   },
 });
 

@@ -4,12 +4,11 @@ import { FlatList, StyleSheet, View } from "react-native";
 import { useMedia } from "../hooks/ApiHooks";
 import ListItem from "./ListItem";
 import PropTypes from "prop-types";
+import { Divider } from "react-native-elements";
 
 // Single country
 const CountryList = ({ navigation }) => {
   const { mediaArray } = useMedia();
-
-  console.log(mediaArray);
 
   return (
     <View style={{ flex: 10 }}>
@@ -17,6 +16,7 @@ const CountryList = ({ navigation }) => {
         data={mediaArray.data}
         contentContainerStyle={styles.container}
         keyExtractor={(item) => item.name}
+        ItemSeparatorComponent={Divider}
         renderItem={({ item }) => (
           <ListItem navigation={navigation} singleItem={item} />
         )}
