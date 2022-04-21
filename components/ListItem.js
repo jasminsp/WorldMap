@@ -4,9 +4,14 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
 // Single country
-const ListItem = ({ singleItem }) => {
+const ListItem = ({ navigation, singleItem }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => {
+        navigation.navigate("CountryDetail", { file: singleItem });
+      }}
+    >
       <Text style={{ flex: 8, fontSize: 24, padding: 6 }}>
         {singleItem.name}
       </Text>
@@ -18,6 +23,7 @@ const ListItem = ({ singleItem }) => {
 };
 
 ListItem.propTypes = {
+  navigation: PropTypes.object,
   singleItem: PropTypes.object.isRequired,
 };
 

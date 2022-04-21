@@ -10,6 +10,8 @@ import { Divider } from "react-native-elements";
 const CountryList = ({ navigation }) => {
   const { mediaArray } = useMedia();
 
+  // console.log(mediaArray);
+
   return (
     <View style={{ flex: 10 }}>
       <FlatList

@@ -12,7 +12,7 @@ const MainView = ({ navigation }) => {
           fontWeight: "200",
           paddingHorizontal: 20,
           paddingBottom: 30,
-          marginTop: -20,
+          marginTop: -10,
         }}
       >
         Select a country to see more details
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
   title: {
     flex: 1,
     paddingHorizontal: 20,
+    paddingTop: 20,
     alignSelf: "flex-start",
     fontSize: 40,
     fontWeight: "600",

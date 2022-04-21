@@ -9,9 +9,9 @@ const useMedia = () => {
   // Fetching all countries with unicode flag
   const fetchCountries = async () => {
     try {
-      const countryData = await getDataByUrl("flag/unicode");
+     // const countryData = await getDataByUrl("flag/unicode");
       const locations = await getDataByUrl("positions");
-      setMediaArray(countryData);
+      setMediaArray(locations);
     } catch (error) {
       console.log("Error", error);
     }
