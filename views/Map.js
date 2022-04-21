@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
-import { Dimensions, SafeAreaView, StyleSheet, View } from "react-native";
-import MapView from "react-native-maps";
+import {
+  Dimensions,
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  View,
+} from "react-native";
+import MapView from "react-native-map-clustering";
 import { Marker } from "react-native-maps";
 import { useMedia } from "../hooks/ApiHooks";
 
 // Return list of countries
 const Map = () => {
   const { mediaArray } = useMedia();
-  const [markers, setMarkers] = useState(null);
+  const [markers, setMarkers] = useState([]);
+  const [markerActive, setMarkerActive] = useState([]);
 
   // Getting marker data only once
   useEffect(
@@ -18,19 +25,27 @@ const Map = () => {
     []
   );
 
+  const initialRegion = {
+    latitude: 85.72825,
+    longitude: 10.23,
+    latitudeDelta: 5.45,
+    longitudeDelta: 5.45,
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.mapContainer}>
-        <MapView style={styles.map}>
+        <MapView style={styles.map} initialRegion={initialRegion}>
           {markers &&
             markers.map((marker, index) => (
               <Marker
                 key={index}
-                pinColor={"black"}
+                pinColor={markerActive == marker.iso2 ? "#1EA689" : "#000000"}
                 coordinate={{
-                  latitude: marker.lat,
-                  longitude: marker.long,
+                  latitude: Number(marker.lat),
+                  longitude: Number(marker.long),
                 }}
+                onPress={() => setMarkerActive(marker.iso2)}
                 title={marker.name}
               ></Marker>
             ))}

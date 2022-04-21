@@ -4,17 +4,9 @@ import CountryList from "../components/CountryList";
 // Return list of countries
 const MainView = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.lightMode}>
       <Text style={styles.title}>Countries</Text>
-      <Text
-        style={{
-          fontSize: 16,
-          fontWeight: "200",
-          paddingHorizontal: 20,
-          paddingBottom: 30,
-          marginTop: -10,
-        }}
-      >
+      <Text style={styles.descriptionLight}>
         Select a country to see more details
       </Text>
       <CountryList navigation={navigation} />
@@ -23,13 +15,13 @@ const MainView = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  lightMode: {
     flex: 1,
     flexDirection: "column",
     width: "100%",
     height: "100%",
+    backgroundColor: "#FCFCFC",
   },
-
   title: {
     flex: 1,
     paddingHorizontal: 20,
@@ -37,6 +29,16 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     fontSize: 40,
     fontWeight: "600",
+    color: "#217B8F",
+  },
+  descriptionLight: {
+    fontSize: 16,
+    fontWeight: "400",
+    opacity: 0.5,
+    paddingHorizontal: 20,
+    paddingBottom: 30,
+    marginTop: -10,
+    color: "#217B8F",
   },
 });
 

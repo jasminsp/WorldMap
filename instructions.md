@@ -26,6 +26,7 @@ Add steps for installation and explanation on how the given assignment was condu
 - Add dark/light mode based on user's system default
 
 - Group markers
+  DONE
 
 - Readme file with installation instructions and some insight to the app
 

@@ -12,10 +12,25 @@ const ListItem = ({ navigation, singleItem }) => {
         navigation.navigate("CountryDetail", { file: singleItem });
       }}
     >
-      <Text style={{ flex: 8, fontSize: 24, padding: 6 }}>
+      <Text
+        style={{
+          flex: 8,
+          fontSize: 24,
+          padding: 6,
+          color: "#738AA8",
+        }}
+      >
         {singleItem.name}
       </Text>
-      <Text style={{ flex: 1, fontSize: 20, fontWeight: "100" }}>
+      <Text
+        style={{
+          flex: 1,
+          fontSize: 20,
+          fontWeight: "400",
+          color: "#738AA8",
+          opacity: 0.5,
+        }}
+      >
         {singleItem.iso2}
       </Text>
     </TouchableOpacity>
@@ -32,6 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 15,
+    backgroundColor: "#FCFCFC",
   },
 });
 
