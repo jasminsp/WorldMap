@@ -42,7 +42,7 @@ API service used is [Link to documents](https://documenter.getpostman.com/view/1
 ## Screenshots
 Some of the views
 
-<img src="/assets/screenshots/screenshot1.png" width="250"> <img src="/assets/screenshots/screenshot2.png" width="250"> <img src="/assets/screenshots/screenshot3.png" width="250">
+<img src="/assets/screenshots/screenshot1.png" width="250"> <img src="/assets/screenshots/screenshot3.png" width="250"> <img src="/assets/screenshots/screenshot5.png" width="250">
 
 ### Installation:
 
