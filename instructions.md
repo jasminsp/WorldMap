@@ -11,24 +11,11 @@ Add steps for installation and explanation on how the given assignment was condu
 ### Features:
 
 - The application has main screen, which displays a list of all countries in the world (All countries according to the API)
-  DONE
-
 - Selecting a country opens map screen and zooms to selected location
-
 - All locations are displayed on the map with map markers
-  DONE
-
 - Selected location has a different marker
-
 - Pressing a marker displays the name of the country
-  DONE
-
 - Add dark/light mode based on user's system default
-
 - Group markers
-  DONE
-
 - Readme file with installation instructions and some insight to the app
-
 - Runs at least on Android or iOS
-  DONE

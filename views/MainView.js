@@ -1,10 +1,13 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+// Contributor: Jasmin Partanen
+// List of countries fetched from API
+
+// Imports
+import { SafeAreaView, StyleSheet, Text } from "react-native";
 import CountryList from "../components/CountryList";
 
-// Return list of countries
 const MainView = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.lightMode}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Countries</Text>
       <Text style={styles.descriptionLight}>
         Select a country to see more details
@@ -15,7 +18,7 @@ const MainView = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  lightMode: {
+  container: {
     flex: 1,
     flexDirection: "column",
     width: "100%",

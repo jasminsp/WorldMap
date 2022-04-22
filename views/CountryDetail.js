@@ -1,37 +1,41 @@
-// Import from react
+// Contributor: Jasmin Partanen
+// Detailed country view
+
+// Imports
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import PropTypes from "prop-types";
 import MapView, { Marker } from "react-native-maps";
+import { Platform } from "react-native";
 
+// Country details as parameter from route
 const CountryDetail = ({ route }) => {
-  const { file } = route.params;
+  const { country } = route.params;
 
   return (
     <View style={styles.mapContainer}>
-      <View></View>
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: file.lat,
-          longitude: file.long,
-          latitudeDelta: 0.0,
-          longitudeDelta: 0.0,
+          latitude: country.lat,
+          longitude: country.long,
+          latitudeDelta: Platform.OS == "android" ? 10 : 5,
+          longitudeDelta: Platform.OS == "android" ? 5 : 5,
         }}
       >
         <Marker
-          key={file.name}
-          pinColor={"black"}
+          key={country.name}
+          pinColor={Platform.OS == "android" ? "teal" : "black"}
           coordinate={{
-            latitude: Number(file.lat),
-            longitude: Number(file.long),
+            latitude: Number(country.lat),
+            longitude: Number(country.long),
           }}
-          title={file.name}
+          title={country.name}
         ></Marker>
       </MapView>
-      <Text style={styles.title}>{file.name}</Text>
+      <Text style={styles.title}>{country.name}</Text>
       <Text style={styles.location}>
-        Latitude: {file.lat}, Longitude: {file.long}
+        Latitude: {country.lat}, Longitude: {country.long}
       </Text>
     </View>
   );

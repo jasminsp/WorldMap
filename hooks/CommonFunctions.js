@@ -1,6 +1,9 @@
+// Contributor: Jasmin Partanen
+// Global functions for fetching data from API
+
+// Imports
 import { baseUrl } from "../utils/url";
 
-// Server communication
 const fetchData = async (url, options = {}) => {
   try {
     const response = await fetch(url, options);

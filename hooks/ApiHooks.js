@@ -1,17 +1,20 @@
+// Contributor: Jasmin Partanen
+// Fetching all countries from the API
+
+// Imports
 import { useContext, useEffect, useState } from "react";
 import { MainContext } from "../contexts/MainContext";
 import { getDataByUrl } from "./CommonFunctions";
 
-const useMedia = () => {
-  const [mediaArray, setMediaArray] = useState([]);
+const useData = () => {
+  const [countryArray, setCountryArray] = useState([]);
   const { update, setUpdate } = useContext(MainContext);
 
-  // Fetching all countries with unicode flag
+  // Fetch all countries by their position
   const fetchCountries = async () => {
     try {
-     // const countryData = await getDataByUrl("flag/unicode");
       const locations = await getDataByUrl("positions");
-      setMediaArray(locations);
+      setCountryArray(locations);
     } catch (error) {
       console.log("Error", error);
     }
@@ -19,12 +22,11 @@ const useMedia = () => {
 
   useEffect(() => {
     fetchCountries();
-    // return () => {};
   }, [update, setUpdate]);
 
   return {
-    mediaArray,
+    countryArray,
   };
 };
 
-export { useMedia };
+export { useData };

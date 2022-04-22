@@ -1,15 +1,17 @@
-// Import from react
+// Contributor: Jasmin Partanen
+// Single country in the country list
+
+// Imports
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 
-// Single country
 const ListItem = ({ navigation, singleItem }) => {
   return (
     <TouchableOpacity
       style={styles.container}
       onPress={() => {
-        navigation.navigate("CountryDetail", { file: singleItem });
+        navigation.navigate("CountryDetail", { country: singleItem });
       }}
     >
       <Text

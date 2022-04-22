@@ -14,9 +14,23 @@ Application to show geolocations and details of different countries on the map.
 - Selected location has a different marker
 - Runs both on Android and iOS
 
+- Dark mode not implemented, but could be done through React Native Appearance in the following way (gets the system theme prefered by user):
+
+```
+- import { useColorScheme } from "react-native";
+- const theme = useColorScheme();
+
+Inside styling we could use:
+- <Text style={theme == 'light' ? styles.textLight : styles.textDark}>Hello</Text>
+```
+
+### Known bugs:
+
+- Android: On the map with all coutries, pin wont change color when active.
+
 ### Libraries:
 
-- React Native Maps - [React Native Maps](https://github.com/react-native-maps/react-native-maps)
+- React Native Maps - [Link to documents](https://github.com/react-native-maps/react-native-maps)
 
 ### APIs service:
 
@@ -35,8 +49,4 @@ $ npm install
 $ npm start
 ```
 
-Open expo client app on mobile device and start using
-
-NOT DONE YET
-
-- Add dark/light mode based on user's system default
+Open expo client app on mobile device and start using.

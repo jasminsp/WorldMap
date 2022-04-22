@@ -1,29 +1,28 @@
+// Contributor: Jasmin Partanen
+// Map view to display all countries with markers
+
+// Imports
 import { useEffect, useState } from "react";
 import {
   Dimensions,
-  Image,
+  Platform,
   SafeAreaView,
   StyleSheet,
   View,
 } from "react-native";
 import MapView from "react-native-map-clustering";
 import { Marker } from "react-native-maps";
-import { useMedia } from "../hooks/ApiHooks";
+import { useData } from "../hooks/ApiHooks";
 
-// Return list of countries
 const Map = () => {
-  const { mediaArray } = useMedia();
+  const { countryArray } = useData();
   const [markers, setMarkers] = useState([]);
   const [markerActive, setMarkerActive] = useState([]);
 
   // Getting marker data only once
-  useEffect(
-    () => {
-      setMarkers(mediaArray.data);
-    },
-    markers,
-    []
-  );
+  useEffect(() => {
+    setMarkers(countryArray.data);
+  }, [markers, []]);
 
   const initialRegion = {
     latitude: 85.72825,
@@ -40,7 +39,15 @@ const Map = () => {
             markers.map((marker, index) => (
               <Marker
                 key={index}
-                pinColor={markerActive == marker.iso2 ? "#1EA689" : "#000000"}
+                pinColor={
+                  markerActive == marker.iso2
+                    ? Platform.OS == "android"
+                      ? "violet"
+                      : "#1EA689"
+                    : Platform.OS == "android"
+                    ? "teal"
+                    : "#000000"
+                }
                 coordinate={{
                   latitude: Number(marker.lat),
                   longitude: Number(marker.long),
