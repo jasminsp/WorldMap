@@ -39,6 +39,11 @@ API service used is [Link to documents](https://documenter.getpostman.com/view/1
 - Apis service are tested with Postman
 - App runs on Expo client
 
+## Screenshots
+Some of the views
+
+<img src="/assets/screenshots/screenshot1.png" width="250"> <img src="/assets/screenshots/screenshot2.png" width="250"> <img src="/assets/screenshots/screenshot3.png" width="250">
+
 ### Installation:
 
 To run this app, install it locally by cloning and use npm:
